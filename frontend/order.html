@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <style>
+        /* --- CARD STYLES FOR ORDER PAGE --- */
+        .center-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px 25px;
+            max-width: 500px;
+            margin: 30px auto;
+            text-align: center;
+            color: #D9A066; /* light orangey-brown / blurrywood color */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .food-empty-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+            color: #D9A066;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .order-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .order-btn {
+            background-color: #FFB6C1;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: 2px solid #FFB6C1;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background-color: #FF69B4;
+        }
+    </style>
+</head>
+
+<body class="page">
+    <script src="js/script.js"></script>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Agelgel</a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html" class="active"><span style="font-size: 20px;">🏚️</span>Home</a></li>
+                    <li><a href="menu.html"><span style="font-size: 20px;">📋</span>Menu</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br>
+            <br>
+            <br>
+
+    <!-- PAGE TITLE CARD -->
+    <main>
+        <div class="center-card" style="color: gray;">
+            <h1>Your AGELGEL Order</h1>
+            <p>Review your selected dishes and place your order</p>
+        </div>
+
+        <!-- Order Summary -->
+        <section id="order-summary" >
+            <div id="empty-message" class="food-empty-card" style="color: gray;">
+                 <strong>No food selected yet.</strong>
+            </div>
+            <ul id="food-list"></ul>
+        </section>
+
+
+
+        <br>
+            <br>
+            <br>
+        <!-- BUTTONS -->
+        <div class="order-buttons-wrapper" style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+            <button onclick="placeOrder()" class="menu-btn">Order!</button>
+        </div>
+
+
+        <br>
+            <br>
+            <br>
+         
+
+
+    </main>
+
+    <script>
+        const foodList = JSON.parse(localStorage.getItem("agelgelCart")) || [];
+        const listElement = document.getElementById("food-list");
+        const emptyCard = document.getElementById("empty-message");
+
+        if (foodList.length === 0) {
+            emptyCard.style.display = "block";
+        } else {
+            emptyCard.style.display = "none";
+            foodList.forEach(food => {
+                const li = document.createElement("li");
+                li.textContent = food;
+                listElement.appendChild(li);
+            });
+        }
+
+        function placeOrder() {
+            alert("Your AGELGEL order has been placed! 🎉");
+            localStorage.removeItem("agelgelCart");
+            window.location.href = "menu.html";
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Agelgel. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

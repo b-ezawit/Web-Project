@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu | Agelgel</title>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <style>
+
+  .choice-grid {
+  display: flex;           
+  gap: 20px;               
+  justify-content: center;  
+  flex-wrap: wrap;         
+}
+
+.choice-card {
+  display: flex;             
+  flex-direction: column;    
+  align-items: center;       
+  justify-content: center;   
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px;              
+  height: 400px;             
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+.choice-card img {
+  width: 300px;               
+  height: 300px;              
+  object-fit: cover;          
+}
+
+.choice-card:hover {
+  transform: translateY(-5px);
+}
+</style>
+
+
+
+</head>
+<body class="page">
+  <script src="js/script.js"></script>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Agelgel</a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="index.html"><span style="font-size: 20px;">🏚️</span>Home</a></li>
+          <li><a href="order.html"><span style="font-size: 22px;">🍽️</span>Order</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <br>
+  <br>
+
+  <!-- PAGE TITLE -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 style="color: white; text-align: center;"><strong>CHOOSE YOUR MENU!</strong></h1>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+
+  <!-- MENU CHOICES -->
+  <section class="menu-choice">
+    <div class="container choice-grid">
+      <a href="fasting.html" class="choice-card" style="border: 3px solid grey; background-color: lightgray;">
+        <h2 style="color: white"><strong>Fasting Menu</strong></h2>
+        <h3><span style="font-size: 80px;">🍴 🥗</span></h3>
+      </a>
+
+      <a href="feast.html" class="choice-card" style="border: 3px solid grey; background-color: lightgray;">
+        <h2 style="color: white"><strong>Non-Fasting Menu</strong></h2>
+        <h3><span style="font-size: 80px;">🍴 🍗</span></h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-bottom"><p>&copy; 2025 Agelgel. All rights reserved.</p></div>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo-wrapper">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9DD46XC3vu_6iGSENCS29pngZsPTqgPoMhg&s" 
+           alt="Logo" 
+           style="height: 60px;">
+      <a href="index.html" class="logo" aria-label="Agelgel Home">Agelgel</a>
+    </div>
+
+    <nav aria-label="Primary">
+      <ul class="nav">
+        <li><a href="index.html" class="active"><span style="font-size: 20px;">🏚️</span>Home</a></li>
+        <li><a href="menu.html"><span style="font-size: 20px;">📋</span>Menu</a></li>
+        <li><a href="order.html"><span style="font-size: 22px;">🍽️</span>Order</a></li>
+        <li><a href="transaction-record.html"><span style="font-size: 20px;">📖</span>Transaction Record</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+   
